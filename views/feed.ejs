@@ -20,9 +20,9 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center bg-dark">Columna 1</div>
-
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left">Columna 1</div>
         <div class="col-xs-6 col-sm-6">
+          <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
             <a onclick="reloadTweets()" class="col-xs-3 col-sm-6 fw-bold tw-title">Inicio</a>
             <div class="col-xs-3 col-sm-6 text-end tw-title-icon">
@@ -62,11 +62,11 @@
                 <div class="col-lg-5">
                   <div class="tw-icon-row">
                     <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
+                    <i class="fa-solid fa-gift"></i>
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <i class="fa-solid fa-location-dot"></i>
                   </div>
                 </div>
                 <div class="col-lg-2">
@@ -75,9 +75,15 @@
               </div>
             </div>
           </div>
+          <!-- Tweet Form End-->
+          <!-- Tweets Feed-->
+          <div class="row">
+            <%- include('partials/tweet.ejs') %> <%- include('partials/tweet.ejs') %> <%-
+            include('partials/tweet.ejs') %> <%- include('partials/tweet.ejs') %> <%-
+            include('partials/tweet.ejs') %> <%- include('partials/tweet.ejs') %>
+          </div>
         </div>
-
-        <div class="col-xs-3 col-sm-3 text-center bg-dark">Columna 3</div>
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">Columna 3</div>
       </div>
     </div>
     <script

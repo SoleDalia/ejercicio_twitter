@@ -3,6 +3,13 @@ html {
     "Helvetica Neue", sans-serif;
 }
 
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
 /* tweeter logo */
 .logo {
   padding-top: 36px;

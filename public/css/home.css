@@ -1,0 +1,469 @@
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+}
+
+/* tweeter logo */
+.logo {
+  padding-top: 36px;
+  width: 45px;
+  height: 75px;
+}
+
+/* texts under logo */
+.main-text {
+  font-weight: 600;
+  padding: 38px 0;
+  font-size: 4.8rem;
+}
+
+.second-text {
+  font-weight: 600;
+  padding: 20px 0;
+  font-size: 2rem;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  margin-left: -12px;
+}
+
+/* buttons with icons */
+.btn-box {
+  margin-bottom: 8px;
+}
+
+.btn-home {
+  appearance: none;
+  border-radius: 20px;
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  background: white;
+  cursor: pointer;
+  width: 300px;
+  max-width: 400px;
+  padding: 0 12px;
+  height: 40px;
+  transition: background-color 0.218s, border-color 0.218s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bi-google,
+.bi-apple {
+  margin-right: 6px;
+}
+
+.btn-google:hover {
+  box-shadow: none;
+  background: rgba(66, 133, 244, 0.04);
+  border-color: #d2e3fc;
+  outline: none;
+}
+
+.btn-apple {
+  font-weight: 600;
+}
+
+.btn-apple:hover {
+  box-shadow: none;
+  background: rgb(230, 230, 230);
+  outline: none;
+}
+
+/* line beetween buttons */
+.or-box {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 4px 0;
+  height: 28px;
+  /* border: 2px solid red; */
+}
+
+.line-left {
+  height: 1px;
+  width: 140px;
+  margin-right: 8px;
+  border-bottom: 1px solid rgb(239, 243, 244);
+}
+
+.line-right {
+  height: 1px;
+  width: 140px;
+  margin-left: 8px;
+  border-bottom: 1px solid rgb(239, 243, 244);
+}
+
+/* button signup */
+.btn-signup {
+  background-color: rgb(29, 155, 240);
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 300px;
+  max-width: 400px;
+  padding: 0 12px;
+  height: 40px;
+  transition: background-color 0.218s, border-color 0.218s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.btn-signup:hover,
+.btn-signup:focus,
+.btn-signup:active {
+  background-color: rgb(26, 140, 216);
+  color: white;
+  border-color: rgb(26, 140, 216);
+}
+
+footer .nav-link,
+footer .text-center {
+  font-size: 12.7px;
+}
+
+/* under signin text */
+.under-signin {
+  font-size: 11px;
+  color: rgb(83, 100, 113);
+  width: 300px;
+  max-width: 400px;
+}
+
+.special-text {
+  color: rgb(29, 155, 240);
+}
+
+.special-text:hover {
+  text-decoration: underline;
+}
+
+/* question -last-text */
+
+.last-text {
+  font-weight: 600;
+  padding-top: 60px;
+  font-size: 17px;
+}
+
+/* last button */
+
+.btn-onlysignin {
+  appearance: none;
+  border-radius: 20px;
+  border: 1px solid #dadce0;
+  color: rgb(29, 155, 240);
+  background: white;
+  cursor: pointer;
+  width: 300px;
+  max-width: 400px;
+  padding: 0 12px;
+  height: 40px;
+  transition: background-color 0.218s, border-color 0.218s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 23px;
+}
+
+.btn-onlysignin:hover,
+.btn-onlysignin:focus,
+.btn-onlysignin:active {
+  /* background-color: rgb(207, 217, 222); */
+  box-shadow: none;
+  background: rgba(66, 133, 244, 0.04);
+  border-color: #d2e3fc;
+  outline: none;
+}
+
+/* modal signup */
+
+.steps-text {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.modal-title {
+  font-size: 31px;
+}
+
+.modal-body {
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.btn-footer {
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 15px;
+}
+
+.datepickers-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.datepickers-box .form-floating {
+  flex-grow: 1;
+}
+
+.datepickers-box .form-floating:first-child {
+  margin-right: 10px;
+}
+
+.datepickers-box .form-floating:last-child {
+  margin-left: 10px;
+}
+
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-header {
+  border-bottom: none;
+  justify-content: flex-start;
+}
+
+.modal-header .btn-close {
+  margin: 0;
+}
+
+.close-btn-box {
+  min-width: 56px;
+}
+
+.modal-footer {
+  padding-right: 80px;
+  padding-left: 80px;
+  justify-content: center;
+}
+
+.btn-modal-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: rgb(141, 140, 140);
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  min-height: 52px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.btn-modal-next:hover {
+  background-color: rgb(141, 140, 140);
+  color: white;
+  border-color: rgb(141, 140, 140);
+}
+.text-underphone {
+  float: right;
+  text-decoration: none;
+}
+
+.text-underphone:hover {
+  float: right;
+  text-decoration: underline;
+}
+
+/* modal signup 2nd step */
+
+.modal-title2 {
+  color: black;
+  font-weight: 600;
+  font-size: 2rem;
+  padding-left: 45px;
+  padding-top: 60px;
+}
+
+.step-text {
+  padding-left: 30px;
+  font-weight: 700;
+  padding-left: 45px;
+}
+
+.btn-back {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.modal-titlecustomise {
+  font-weight: 700;
+  padding-bottom: 60px;
+  font-size: 30px;
+}
+
+.modal-text1 {
+  font-weight: 700;
+  /* padding-bottom: 60px; */
+  font-size: 17px;
+}
+
+.modal-text2 {
+  padding-top: 20px;
+}
+
+.btn-modal-next2 {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  min-height: 52px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.btn-modal-next2:hover {
+  background-color: black;
+  color: white;
+}
+
+.modal-body2 {
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.modal-text3 {
+  margin-top: 80px;
+}
+
+/* modal signup3 */
+
+.btn-modal-next3 {
+  background-color: rgb(29, 155, 240);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  min-height: 52px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.btn-modal-next3:hover {
+  background-color: rgb(26, 140, 216);
+  color: white;
+}
+
+.large-text {
+  padding-right: 80px;
+  padding-left: 80px;
+  font-size: 14px;
+}
+
+/* error view */
+.modal-title-error {
+  font-weight: 800;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
+.btn-dark {
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
+.error-box {
+  width: 10%;
+  height: 10%;
+}
+
+/* sign in */
+
+.logo-signin {
+  width: 25px;
+  height: 21px;
+  margin-top: 0;
+}
+
+.modal-title-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.modal-body-signin {
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.btn-box-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.or-box-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.btn-final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.btn-final2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.finalquestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
+.btn-next {
+  background-color: black;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: rgb(43, 42, 42);
+  color: white;
+}
+
+.form-text-signin {
+  width: 300px;
+  max-width: 400px;
+  margin-left: 150px;
+}

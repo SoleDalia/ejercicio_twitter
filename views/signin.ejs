@@ -114,15 +114,29 @@
             <span class="or-text">or</span>
             <div class="line-right"></div>
           </div>
-          <form class="user" method="POST" action="/signin">
+          <form action="/signin" method="post">
             <div class="form-floating mb-3 form-text-signin">
               <input
                 type="text"
                 class="form-control rounded-3"
-                id="Firstname,Lastname,Username"
-                placeholder="Firstname,Lastname,Username"
+                id="usernameOrEmail"
+                placeholder="Phone,name@example.com,username"
+                name="usernameOrEmail"
               />
-              <label for="floatingInput">Firstname, Lastname or Username</label>
+              <label for="usernameOrEmail">Username or email</label>
+            </div>
+            <div class="form-floating mb-3 form-text-signin">
+              <input
+                type="text"
+                class="form-control rounded-3"
+                id="password"
+                placeholder="Phone,name@example.com,username"
+                name="password"
+              />
+              <label for="password">Password</label>
+            </div>
+            <div class="btn-final">
+              <button class="btn-apple btn-home btn-next" type="submit">Sign in</button>
             </div>
           </form>
           <div class="btn-final">

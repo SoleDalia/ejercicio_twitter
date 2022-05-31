@@ -8,6 +8,7 @@ const initializePassport = require("./middlewares/passport");
 const session = require("express-session");
 const { populateUsers } = require("./seeders/userSeeders");
 const { populateTweets } = require("./seeders/tweetSeeders");
+const { populateFollow } = require("./seeders/followSeeders");
 const morgan = require("morgan");
 
 app.use(express.static("public"));
@@ -28,6 +29,13 @@ initializePassport(app);
 
 router(app);
 
+async function populateDatabase() {
+  await populateUsers();
+  await populateTweets();
+  await populateFollow();
+}
+
+populateDatabase();
 //populateUsers();
 //populateTweets();
 

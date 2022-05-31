@@ -15,12 +15,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+    />
     <link rel="stylesheet" href="./css/feed.css" />
+    <link rel="stylesheet" href="/css/partials.css" />
   </head>
   <body>
+    <%- include('partials/sidebar.ejs') %>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left">Columna 1</div>
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left"></div>
         <div class="col-xs-6 col-sm-6">
           <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
@@ -81,7 +88,16 @@
             <div id="tweets"></div>
           </div>
         </div>
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">Columna 3</div>
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">
+          <div class="side-right">
+            <div class="search-form">
+              <form action="">
+                <label for=""><i class="fas fa-search"></i></label>
+                <input type="text" name="" id="" value="Search Twitter" />
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script

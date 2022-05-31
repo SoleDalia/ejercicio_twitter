@@ -29,6 +29,7 @@ initializePassport(app);
 
 router(app);
 
+
 async function populateDatabase() {
   await populateUsers();
   await populateTweets();
@@ -36,8 +37,6 @@ async function populateDatabase() {
 }
 
 populateDatabase();
-//populateUsers();
-//populateTweets();
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

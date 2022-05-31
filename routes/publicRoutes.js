@@ -5,7 +5,7 @@ const { isNotLoggedIn, isLoggedIn } = require("../middlewares/auth");
 // ...
 
 publicRouter.get("/home", isLoggedIn, (req, res) => {
-    res.render("feed");
+    res.render("feed", { user: req.user });
 })
 
 module.exports = publicRouter;

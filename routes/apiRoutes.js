@@ -7,12 +7,6 @@ apiRouter.route('/tweets')
     .get(tweetController.index)
     .post(tweetController.store)
 
-apiRouter.route('/tweets/get/:userId')
-    .get(tweetController.getTweetsByUser)
-
-apiRouter.route('/tweets/like/:id')
-    .post(tweetController.likesHandler)
-
 apiRouter.route('/users')
     .get(userController.index)
     .post(userController.store)

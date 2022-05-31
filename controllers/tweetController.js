@@ -1,54 +1,34 @@
-const { tr } = require("date-fns/locale");
 const { User, Tweet } = require("../db/connection");
 
-//Trae todos los tweets en forma de JSON
+//Get all the tweets
 async function index(req, res) {
   try {
-    const loggedUser = await User.findById(req.user._id);
-    const following = await loggedUser.following;
-    //Get the tweets from the logged user and the users that he follows
-    const tweets = await Tweet.find({
-      $or: [
-        { author: loggedUser._id },
-        { author: { $in: following } }
-      ]
-    }).sort({ creationdate: -1 }).populate('author');
+    const tweets = await Tweet.find({})
     res.json(tweets);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
-
-
-//Obten los tweets de un usuario
-async function getTweetsByUser(req, res) {
-  const { userId } = req.params;
-  const tweets = await Tweet.find({ author: userId }).sort({ creationdate: -1 }).populate('author');
-  res.json(tweets);
-}
-
-// Guarda el nuevo tweet en la base
+// Store a newly created resource in storage.
 async function store(req, res) {
-  try {
-    const { text } = req.body;
-    const user = await User.findById(req.user._id);
-    const tweet = new Tweet({
-      text,
-      author: user._id,
-      creationdate: new Date(),
-    });
-    await tweet.save();
-    const savedTweet = await Tweet.findById(tweet._id).populate('author');
-    res.json(savedTweet);
-  } catch (err) {
-    res.json(err);
-  }
+  const { text } = req.body;
+  const user = await User.findById(req.user._id);
+  const tweet = await user.tweets.create({ text });
+  res.json(tweet);
 }
 
-// Trae el Tweet que solicitamos para editar en forma de JSON
-async function getTweetById(req, res) {
+// Show the form for editing the specified resource.
+async function edit(req, res) {
   const { id } = req.params;
   const tweet = await Tweet.findById(id);
+  res.json(tweet);
+}
+
+// Update the specified resource in storage.
+async function update(req, res) {
+  const { body } = req;
+  const { id } = req.params;
+  const tweet = await Tweet.findByIdAndUpdate(id, body);
   res.json(tweet);
 }
 
@@ -59,25 +39,22 @@ async function destroy(req, res) {
   res.json(tweet);
 }
 
-async function likesHandler(req, res) {
+async function addLike(req, res) {
   const { id } = req.params;
-  try {
-    const user = await User.findById(req.user._id);
-    const tweet = await Tweet.findById(id);
+  const tweet = await Tweet.findById(id);
+  const user = await User.findById(req.user._id);
+  tweet.likes.push(user);
+  tweet.save();
+  res.json(tweet);
+}
 
-    //Si el usuario ya le dió like al tweet, lo saca
-    if (tweet.likes.includes(user._id)) {
-      tweet.likes.pull(user._id);
-      tweet.save();
-      res.json({ tweet, liked: false });
-    } else {
-      tweet.likes.push(user._id);
-      tweet.save();
-      res.json({ tweet, liked: true });
-    }
-  } catch (error) {
-    res.json(error);
-  }
+async function removeLike(req, res) {
+  const { id } = req.params;
+  const tweet = await Tweet.findById(id);
+  const user = await User.findById(req.user._id);
+  tweet.likes.pull(user);
+  tweet.save();
+  res.json(tweet);
 }
 
 // Otros handlers...
@@ -86,8 +63,9 @@ async function likesHandler(req, res) {
 module.exports = {
   index,
   store,
-  getTweetById,
-  likesHandler,
-  getTweetsByUser,
+  edit,
+  update,
   destroy,
+  addLike,
+  removeLike
 };

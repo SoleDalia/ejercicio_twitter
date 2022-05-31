@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+.main {
+  margin-left: 20%;
+  width: 50%;
+}
 
 .profileHead {
   height: 50px;

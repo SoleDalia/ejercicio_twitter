@@ -53,14 +53,19 @@
     border-radius: 50%;
 }
 
-#tweetInput {
+.tw-tweet-input textarea {
     width: 100%;
     height: 3em;
     border: none;
     border-radius: 0.5em;
-    padding: 0.3em;
+    padding: 0.5em;
     font-size: 1.2rem;
     resize: none;
+}
+
+.tw-tweet-input textarea:hover {
+    border: none;
+    border-radius: 0em;
 }
 
 .tw-tweet-input .tw-user-info a {
@@ -94,7 +99,7 @@
     display: flex;
     justify-content:space-around;
     margin-top: 0.5rem;
-    margin-left: 3em;
+    margin-left: 3.5em;
 }
 
 .tw-icon-row i {
@@ -107,55 +112,6 @@
 .tw-icon-row i:hover {
     background-color: #1da0f238;
     cursor: pointer;
-}
-
-.tw-tweet-footer {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5em 5em;
-    padding: 0.2em;
-}
-
-.tw-tweet-footer a {
-    color: #6b6b6b;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 100;
-}
-
-.tw-tweet-icon {
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tw-tweet-icon.danger:hover {
-    transition: 0.2s;
-    background-color: #ff808023;
-    ;
-    cursor: pointer;
-    color: #ff8080;
-}
-
-.tw-tweet-icon.success:hover {
-    transition: 0.2s;
-    background-color: #8de6a331;
-    cursor: pointer;
-    color: #8de6a3;
-}
-
-.tw-tweet-icon.primary:hover {
-    transition: 0.2s;
-    background-color: #1da0f221;
-    cursor: pointer;
-    color: #1da1f2
-}
-
-.fa-heart.danger {
-    color: #ff8080;
 }
 
 .sidebar-left {

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/css/partials.css" />
   </head>
   <body>
-    <%- include('partials/sidebar.ejs') %>
+    <%- include('partials/sidebar.ejs', {user: user}) %>
     <div class="container">
       <div class="row">
         <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left"></div>
@@ -49,7 +49,7 @@
           <div class="row d-flex">
             <div class="col-xs-1 col-sm-1">
               <div class="tw-tweet-input">
-                <img src="https://via.placeholder.com/150" alt="" />
+                <img src="<%= user.photo  %> " alt="" />
               </div>
             </div>
             <div class="col-xs-11 col-sm-11">
@@ -84,16 +84,14 @@
           </div>
           <!-- Tweet Form End-->
           <!-- Tweets Feed-->
-          <div class="row">
-            <div id="tweets"></div>
-          </div>
+          <div class="row" id="tweets"></div>
         </div>
         <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">
           <div class="side-right">
             <div class="search-form">
               <form action="">
                 <label for=""><i class="fas fa-search"></i></label>
-                <input type="text" name="" id="" value="Search Twitter" />
+                <input type="text" name="" id="searchTweet" placeholder="Search Twitter" />
               </form>
             </div>
           </div>

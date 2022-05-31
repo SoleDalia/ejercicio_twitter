@@ -31,7 +31,7 @@ async function createUser(req, res) {
   } catch (error) {
     res.redirect("/");
   }
-};
+}
 
 // traigo todos los tweets
 const showTweets = async (req, res) => {
@@ -41,16 +41,21 @@ const showTweets = async (req, res) => {
   res.render("feed", { tweets });
 };
 
-// traigo profile
-const ShowProfiles = async (req, res) => {
-  const user = User.findByPk(req.params.id);
-  if (!user) return res.json("404 error profile not found");
-  else res.render("profile", { user });
+// traigo el profile del usuario solicitado
+const showUserProfile = async (req, res) => {
+  const otherUser = await User.findById(req.params.id);
+  const loggedUser = await User.findById(req.user._id);
+  try {
+    if (req.params.id === req.user.id) res.render("profile", { user: loggedUser });
+    else res.render("otherProfile", { otherUser, user: loggedUser });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
   findUser,
   createUser,
   showTweets,
-  ShowProfiles,
+  showUserProfile,
 };

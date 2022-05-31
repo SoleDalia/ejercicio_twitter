@@ -47,8 +47,10 @@
               </svg>
             </div>
             <div style="width: 200px; float: left; margin-left: 20px">
-              <div style="font-weight: 800"><%= user.firstname %> <%= user.lastname %></div>
-              <div><%= user.tweets.length %> Tweets</div>
+              <div style="font-weight: 800">
+                <%= otherUser.firstname %> <%= otherUser.lastname %>
+              </div>
+              <div><%= otherUser.tweets.length %> Tweets</div>
             </div>
           </div>
           <div class="profileHeadPhotoContainer">
@@ -60,13 +62,17 @@
           <div class="editButton">Edit Profile</div>
 
           <div class="userInfoContainer">
-            <h3 style="font-weight: 800"><%= user.firstname %> <%= user.lastname %></h3>
+            <h3 style="font-weight: 800"><%= otherUser.firstname %> <%= otherUser.lastname %></h3>
             <ul class="userInfoList">
-              <li>@<%= user.username %></li>
+              <li>@<%= otherUser.username %></li>
               <li><span> Montevideo, Uruguay </span> <span> Born December 5, 1995 </span></li>
               <li>
-                <span> <i style="font-weight: 800"><%= user.following.length %></i> Following</span>
-                <span><i style="font-weight: 800"><%= user.followers.length %></i> Followers</span>
+                <span>
+                  <i style="font-weight: 800"><%= otherUser.following.length %></i> Following</span
+                >
+                <span
+                  ><i style="font-weight: 800"><%= otherUser.followers.length %></i> Followers</span
+                >
               </li>
             </ul>
           </div>
@@ -84,9 +90,6 @@
         </div>
       </div>
     </div>
-    <a href="/logout" class="btn-logout">Logout</a>
-
-    <!-- Latest compiled and minified JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

@@ -1,5 +1,14 @@
-const { User } = require("../db/connection");
+const { User, Tweet } = require("../db/connection");
 
+//Get all the tweets
+async function index(req, res) {
+  try {
+    const tweets = await Tweet.find({})
+    res.json(tweets);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 // Store a newly created resource in storage.
 async function store(req, res) {
   const { text } = req.body;
@@ -52,6 +61,7 @@ async function removeLike(req, res) {
 // ...
 
 module.exports = {
+  index,
   store,
   edit,
   update,

@@ -121,3 +121,16 @@
 .sidebar-right {
     border-left: 1px solid #e7e7e7;
 }
+
+.border-danger {
+    border: 2px solid rgb(255, 199, 199);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+textarea.non-resize {
+    resize: none;
+}

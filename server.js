@@ -8,10 +8,12 @@ const initializePassport = require("./middlewares/passport");
 const session = require("express-session");
 const { populateUsers } = require("./seeders/userSeeders");
 const { populateTweets } = require("./seeders/tweetSeeders");
+const morgan = require("morgan");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use(morgan("dev"));
 
 app.use(express.json());
 

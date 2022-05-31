@@ -72,3 +72,13 @@ function submitForm() {
   //If the button is clicked, submit the form
   $("#signup-form").submit();
 }
+
+function openModal() {
+  //Open the modal
+  $("#modal-signin").modal("show");
+}
+
+$(document).ready(function () {
+  //Open the modal
+  openModal();
+});

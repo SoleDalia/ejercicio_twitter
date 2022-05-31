@@ -383,21 +383,48 @@ footer .text-center {
   font-size: 14px;
 }
 
-/* error view */
-.modal-title-error {
+/* verify view */
+
+/* .modal-title-error {
   font-weight: 800;
   margin-right: 80px;
   margin-left: 80px;
-}
+} */
 
 .btn-dark {
   margin-right: 80px;
   margin-left: 80px;
+  margin-bottom: 10px;
 }
 
-.error-box {
+/* .error-box {
   width: 10%;
   height: 10%;
+} */
+
+.dateodbirth-text {
+  margin-top: 60px;
+}
+
+.modal-dialog-box {
+  width: 350px;
+  height: 300px;
+}
+
+.modal-title-modal {
+  color: #4c4d4e;
+  font-size: 1rem;
+}
+.verify-phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.text-header-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* sign in */
@@ -473,4 +500,53 @@ footer .text-center {
   width: 300px;
   max-width: 400px;
   margin-left: 150px;
+}
+
+/* successful-registred */
+
+.logo-last {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bi-check-circle {
+  background-color: rgb(26, 140, 216);
+}
+
+.last-text-close {
+  font-size: 25px;
+  font-weight: 700;
+  margin-right: 150px;
+}
+
+.btn-last-modal {
+  background-color: rgb(29, 155, 240);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  min-height: 52px;
+  border-bottom-left-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+/* modal profile */
+
+.img-modal-modal {
+  width: 80%;
+  height: 60%;
+}
+
+.text-perfil {
+  font-weight: 600;
+}
+
+.btn-modal-modal3 {
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Modal -->
+  
+    <button
+      type="button"
+      class="btn btn-signup"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Edit
+    </button>
+    
+    <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close-btn-box">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div>
+            <span class="text-perfil">Editar perfil</span>
+          </div>
+          <div>
+            <button type="button" class="btn btn-modal-modal3" type="submit">Save</button>
+          </div>
+            
+          
+        </div>
+    
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+      
+       <img src="/img/tweeter.png" alt="tweeter image" class="bg-img" class="img-modal-modal"/>
+      </div>
+      </div>
+      </div>
+
+      <div class="modal-body">
+ 
+      <div>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+      </div>
+      
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Name" />
+        <label class="text-secondary" for="floatingInput">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control rounded-3"
+          id="floatingInput"
+          placeholder="Phone,name@example.com,username"
+        />
+        <label for="floatingInput">Bio</label>
+      </div>
+
+      
+
+      
+  
+    
+   
+    
+    <%- include("partials/scripts") %>
+  </body>
+</html>

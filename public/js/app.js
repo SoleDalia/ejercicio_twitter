@@ -1,8 +1,8 @@
 const pages = {
   first: $("#step-1"),
   second: $("#step-2"),
-  third: $("#...."),
-  fourth: $("#..."),
+  third: $("#step-3"),
+  fourth: $("#step-4"),
 };
 const page_number = {
   first: 1,
@@ -28,7 +28,7 @@ function updateMessage() {
   //Update the message to show the current step
   for (let key in pages) {
     if (pages[key].hasClass("active")) {
-      message.text(`Step ${page_number[key]} of 5`);
+      message.text(`Step ${page_number[key]} of 4`);
     }
   }
 }

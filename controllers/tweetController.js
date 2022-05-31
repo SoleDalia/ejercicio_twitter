@@ -1,15 +1,15 @@
 const { User, Tweet } = require("../db/connection");
 
-//Get all the tweets
+//Trae todos los tweets en forma de JSON
 async function index(req, res) {
   try {
-    const tweets = await Tweet.find({})
+    const tweets = await Tweet.find({});
     res.json(tweets);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
-// Store a newly created resource in storage.
+// Guarda el nuevo tweet en la base
 async function store(req, res) {
   const { text } = req.body;
   const user = await User.findById(req.user._id);
@@ -17,18 +17,10 @@ async function store(req, res) {
   res.json(tweet);
 }
 
-// Show the form for editing the specified resource.
-async function edit(req, res) {
+// Trae el Tweet que solicitamos para editar en forma de JSON
+async function getTweetById(req, res) {
   const { id } = req.params;
   const tweet = await Tweet.findById(id);
-  res.json(tweet);
-}
-
-// Update the specified resource in storage.
-async function update(req, res) {
-  const { body } = req;
-  const { id } = req.params;
-  const tweet = await Tweet.findByIdAndUpdate(id, body);
   res.json(tweet);
 }
 
@@ -63,9 +55,8 @@ async function removeLike(req, res) {
 module.exports = {
   index,
   store,
-  edit,
-  update,
+  getTweetById,
   destroy,
   addLike,
-  removeLike
+  removeLike,
 };

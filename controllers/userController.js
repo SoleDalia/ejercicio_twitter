@@ -1,25 +1,25 @@
-const { User } = require("../models");
+const { User } = require("../db/connection");
 
 // Display a listing of the resource.
-async function index(req, res) {}
+async function index(req, res) { }
 
 // Display the specified resource.
-async function show(req, res) {}
+async function show(req, res) { }
 
 // Show the form for creating a new resource
-async function create(req, res) {}
+async function create(req, res) { }
 
 // Store a newly created resource in storage.
-async function store(req, res) {}
+async function store(req, res) { }
 
 // Show the form for editing the specified resource.
-async function edit(req, res) {}
+async function edit(req, res) { }
 
 // Update the specified resource in storage.
-async function update(req, res) {}
+async function update(req, res) { }
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function destroy(req, res) { }
 
 // Otros handlers...
 // ...

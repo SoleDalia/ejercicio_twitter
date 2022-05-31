@@ -20,9 +20,9 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center bg-dark">Columna 1</div>
-
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left">Columna 1</div>
         <div class="col-xs-6 col-sm-6">
+          <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
             <a onclick="reloadTweets()" class="col-xs-3 col-sm-6 fw-bold tw-title">Inicio</a>
             <div class="col-xs-3 col-sm-6 text-end tw-title-icon">
@@ -46,38 +46,42 @@
               </div>
             </div>
             <div class="col-xs-11 col-sm-11">
-              <form class="tw-tweet-input" action="">
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="2"
-                    placeholder="¿Qué está pasando?"
-                  ></textarea>
-                </div>
-              </form>
+              <div class="form-group">
+                <textarea
+                  class="form-control non-resize my-2"
+                  id="tweetInput"
+                  rows="3"
+                  placeholder="¿Qué está pasando?"
+                ></textarea>
+              </div>
             </div>
             <div class="col-xs-12 col-sm-12">
               <div class="row justify-content-between">
                 <div class="col-lg-5">
                   <div class="tw-icon-row">
                     <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
-                    <i class="fa-regular fa-image"></i>
+                    <i class="fa-solid fa-gift"></i>
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <i class="fa-solid fa-location-dot"></i>
                   </div>
                 </div>
                 <div class="col-lg-2">
-                  <button onclick="submitTweet()" class="btn btn-twitter">Twittear</button>
+                  <button onclick="postTweet()" id="tweetBtn" class="btn btn-twitter">
+                    Twittear
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Tweet Form End-->
+          <!-- Tweets Feed-->
+          <div class="row">
+            <div id="tweets"></div>
+          </div>
         </div>
-
-        <div class="col-xs-3 col-sm-3 text-center bg-dark">Columna 3</div>
+        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">Columna 3</div>
       </div>
     </div>
     <script
@@ -85,5 +89,11 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/calls.js"></script>
   </body>
 </html>

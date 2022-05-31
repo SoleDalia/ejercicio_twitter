@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema({
   firstname: { type: String, required: true },
@@ -14,24 +15,10 @@ const userSchema = new Schema({
   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
 
-userSchema.pre("save", function (next) {
-  var user = this;
-
-  // only hash the password if it has been modified (or is new)
-  if (!user.isModified("password")) return next();
-
-  // generate a salt
-  bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
-    if (err) return next(err);
-
-    // hash the password using our new salt
-    bcrypt.hash(user.password, salt, function (err, hash) {
-      if (err) return next(err);
-      // override the cleartext password with the hashed one
-      user.password = hash;
-      next();
-    });
-  });
+userSchema.pre("save", async function (next) {
+  const hashedPassword = await bcrypt.hash(this.password, 10);
+  this.password = hashedPassword;
+  next();
 });
 
 userSchema.methods.comparePassword = function (candidatePassword, cb) {

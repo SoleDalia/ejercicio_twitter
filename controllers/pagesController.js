@@ -17,18 +17,19 @@ const findUser = async (req, res) => {
 };
 
 // create
-const createUsers = async (req, res) => {
+async function createUser(req, res) {
   const newUser = new User({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
   });
   try {
     await newUser.save();
-    res.redirect("/");
+    res.redirect("/signin");
   } catch (error) {
     res.redirect("/");
-    console.log(error);
   }
 };
 
@@ -49,7 +50,7 @@ const ShowProfiles = async (req, res) => {
 
 module.exports = {
   findUser,
-  createUsers,
+  createUser,
   showTweets,
   ShowProfiles,
 };

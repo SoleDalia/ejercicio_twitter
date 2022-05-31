@@ -23,13 +23,7 @@ router.post("/signin", (req, res) => {
   findUser(req, res);
 });
 
-// registrarse
-router.get("/2signup", (req, res) => {
-  res.render("2signup");
-});
+router.post("/signup", createUser);
 
-router.post("/2signup", (req, res) => {
-  createUser(req, res);
-});
 
 module.exports = router;

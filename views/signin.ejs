@@ -123,22 +123,34 @@
             <span class="or-text">or</span>
             <div class="line-right"></div>
           </div>
-          <div class="form-floating mb-3 form-text-signin">
-            <input
-              type="email"
-              class="form-control rounded-3"
-              id="floatingInput"
-              placeholder="Phone,name@example.com,username"
-            />
-            <label for="floatingInput">Phone,email or username</label>
-          </div>
-          <div class="btn-final">
-            <button class="btn-apple btn-home btn-next">Next</button>
-          </div>
+          <form action="/signin" method="post">
+            <div class="form-floating mb-3 form-text-signin">
+              <input
+                type="text"
+                class="form-control rounded-3"
+                id="usernameOrEmail"
+                placeholder="Phone,name@example.com,username"
+                name="usernameOrEmail"
+              />
+              <label for="usernameOrEmail">Username or email</label>
+            </div>
+            <div class="form-floating mb-3 form-text-signin">
+              <input
+                type="text"
+                class="form-control rounded-3"
+                id="password"
+                placeholder="Phone,name@example.com,username"
+                name="password"
+              />
+              <label for="password">Password</label>
+            </div>
+            <div class="btn-final">
+              <button class="btn-apple btn-home btn-next" type="submit">Sign in</button>
+            </div>
+          </form>
           <div class="btn-final2">
             <button class="btn-apple btn-home">Forgot password</button>
           </div>
-
           <div class="finalquestion">
             <span class="text-secondary">Don’t have an account?</span>
             <a href="#"> Sign up</a>

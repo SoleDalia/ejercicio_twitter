@@ -1,7 +1,14 @@
 const { User } = require("../db/connection");
 
 // Display a listing of the resource.
-async function index(req, res) { }
+async function index(req, res) {
+  try {
+    const users = await User.find({})
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
 // Display the specified resource.
 async function show(req, res) { }
@@ -10,7 +17,21 @@ async function show(req, res) { }
 async function create(req, res) { }
 
 // Store a newly created resource in storage.
-async function store(req, res) { }
+async function store(req, res) {
+  const newUser = new User({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+  });
+  try {
+    await newUser.save();
+    res.json(newUser);
+  } catch (error) {
+    res.json(error);
+  }
+}
 
 // Show the form for editing the specified resource.
 async function edit(req, res) { }

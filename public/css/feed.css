@@ -154,8 +154,9 @@
     color: #1da1f2
 }
 
-
-
+.fa-heart.danger {
+    color: #ff8080;
+}
 
 .sidebar-left {
     border-right: 1px solid #e7e7e7;

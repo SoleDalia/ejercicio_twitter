@@ -182,3 +182,7 @@ a {
 .search-form i {
   color: #999;
 }
+
+.search-form input:focus {
+  outline: 0 none;
+}

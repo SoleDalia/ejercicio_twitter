@@ -6,7 +6,6 @@
           <i class="fas fa-dove"></i>
         </a>
       </li>
-
       <li class="menu-item">
         <a class="menu-link" href="/home">
           <i class="fas fa-home"></i>
@@ -45,32 +44,26 @@
 
       <li class="menu-item">
         <a class="menu-link" href="#">
-          <img class="user-img-30" alt="" src="<%- user.photo %>" />
+          <img class="user-img-30" alt="" src="<%= user.photo %> " />
         </a>
 
         <div class="box">
-          <img src="<% if(user.photo) { %> <%- user.photo %> <% } else {%><%-
-          "https://i.stack.imgur.com/34AD2.jpg" %> <% } %> " alt="" class="user-img-40" />
-          <p class="name"><%= user.firstname %></p>
+          <img src="https://via.placeholder.com/150" alt="" class="user-img-40" />
+          <p class="name"><%= user.firstname %> <%= user.lastname %></p>
           <p class="username">@<%= user.username %></p>
           <div class="bio"><%= user.description %></div>
-          <div class="folow">
-            <a href="#"><span><%= user.following.length %></span> Following</a>
-            <a href="#"><span><%= user.following.length %></span> Followers</a>
-          </div>
+          <div class="folow"></div>
         </div>
       </li>
       <li class="menu-item">
         <a class="menu-link" href="#">
           <i class="fas fa-ellipsis-h"></i>
         </a>
-
         <div class="box">
           <a href=""></a>
           <p class="logout">Logout</p>
         </div>
       </li>
-
       <li class="menu-item">
         <a class="menu-link add-twit">
           <i class="fas fa-feather-alt"></i>

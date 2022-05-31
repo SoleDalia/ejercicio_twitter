@@ -7,7 +7,7 @@ module.exports = {
   populateUsers: async () => {
     User.collection.drop();
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
       const userFirstName = faker.name.firstName();
       const userLastName = faker.name.lastName();
       const newUser = await new User({

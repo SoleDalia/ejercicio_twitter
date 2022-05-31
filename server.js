@@ -8,13 +8,13 @@ const initializePassport = require("./middlewares/passport");
 const session = require("express-session");
 const { populateUsers } = require("./seeders/userSeeders");
 const { populateTweets } = require("./seeders/tweetSeeders");
+const { populateFollow } = require("./seeders/followSeeders");
 const morgan = require("morgan");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(morgan("dev"));
-
 app.use(express.json());
 
 app.use(
@@ -29,8 +29,15 @@ initializePassport(app);
 
 router(app);
 
-populateUsers();
-populateTweets();
+async function populateDatabase() {
+  await populateUsers();
+  await populateTweets();
+  await populateFollow();
+}
+
+populateDatabase();
+//populateUsers();
+//populateTweets();
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

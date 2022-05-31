@@ -28,6 +28,8 @@ const helpers = {
     }
   }
 }
+
+
 $(document).ready(function () {
   getTweets();
 });

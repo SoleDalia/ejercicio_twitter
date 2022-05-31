@@ -7,5 +7,8 @@ apiRouter.route('/tweets')
     .get(tweetController.index)
     .post(tweetController.store)
 
+apiRouter.route('/users')
+    .get(userController.index)
+    .post(userController.store)
 
 module.exports = apiRouter; 

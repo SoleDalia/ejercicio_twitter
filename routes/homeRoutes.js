@@ -23,29 +23,7 @@ router.post("/signin", (req, res) => {
   findUser(req, res);
 });
 
-// registrarse
-router.get("/2signup", (req, res) => {
-  res.render("2signup");
-});
+router.post("/signup", createUser);
 
-router.get("/4signup", (req, res) => {
-  res.render("4signup");
-});
 
-router.post("/2signup", (req, res) => {
-  createUser(req, res);
-});
-
-// extras borrar
-router.get("/modal", (req, res) => {
-  res.render("modal");
-});
-
-router.get("/3signup", (req, res) => {
-  res.render("3signup");
-});
-
-router.get("/verify", (req, res) => {
-  res.render("verify");
-});
 module.exports = router;

@@ -3,7 +3,8 @@ const { User, Tweet } = require("../db/connection");
 //Get all the tweets
 async function index(req, res) {
   try {
-    const tweets = await Tweet.find({})
+    const tweets = await Tweet.find({
+    }).sort({ creationdate: -1 }).populate("author");
     res.json(tweets);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -11,10 +12,19 @@ async function index(req, res) {
 }
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const { text } = req.body;
-  const user = await User.findById(req.user._id);
-  const tweet = await user.tweets.create({ text });
-  res.json(tweet);
+  try {
+    const { text } = req.body;
+    const user = await User.findById(req.user._id);
+    const tweet = new Tweet({
+      text,
+      author: user._id,
+      creationdate: new Date(),
+    });
+    await tweet.save();
+    res.json(tweet);
+  } catch (err) {
+    res.json(err);
+  }
 }
 
 // Show the form for editing the specified resource.

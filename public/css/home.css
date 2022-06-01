@@ -33,7 +33,9 @@ html {
 .bg-img {
   width: 100%;
   height: 100%;
+
   margin-left: -12px;
+  margin-right: 12px;
 }
 
 /* buttons with icons */
@@ -321,6 +323,8 @@ footer .text-center {
   padding-top: 20px;
 }
 
+
+
 .btn-modal-next2 {
   background-color: black;
   color: white;
@@ -540,13 +544,38 @@ footer .text-center {
 /* modal profile */
 
 .img-modal-modal {
-  width: 80%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 .text-perfil {
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.btn-modal-modal3 {
+.modal-edit-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-modal-profile {
+  width: 20%;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.btn-btn-save{
+  border-radius: 20px;
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+  padding: 4px 15px;
+}
+
+.btn-btn-save:hover {
+  transition: 0.2s;
+  opacity: 0.8;
 }

@@ -3,6 +3,7 @@ const { newUser, showUser, findUser, createUser } = require("../controllers/page
 const passport = require("passport");
 const router = express.Router();
 const { isNotLoggedIn } = require("../middlewares/auth");
+const { Router } = require("express");
 
 // home
 router.get("/", isNotLoggedIn, (req, res) => {
@@ -29,5 +30,15 @@ router.post("/signin", isNotLoggedIn, (req, res) => {
 });
 
 router.post("/signup", isNotLoggedIn, createUser);
+
+router.get("/logout", (req, res) => {
+  req.logOut(function () {
+    res.redirect('/');
+  });
+});
+
+router.get('/modal', (req, res) => {
+  res.render('modal');
+})
 
 module.exports = router;

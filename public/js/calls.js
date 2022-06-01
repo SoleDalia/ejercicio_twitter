@@ -1,4 +1,3 @@
-
 const helpers = {
   innerTWEET: (tweet) => {
     return `
@@ -22,7 +21,7 @@ const helpers = {
       ><div class="tw-tweet-icon success"><i class="fa-solid fa-retweet"></i></div
     ></a>
     <a onclick="postLike('${tweet._id}')"
-      ><div id="${tweet._id}" class="tw-tweet-icon danger"><i class="fa-regular fa-heart"></i></div
+      ><div id="${tweet._id}" class="tw-tweet-icon danger"><i class="fa-regular fa-heart"><span class="tw-counter"></span></i></div
     ></a>
     <a
       ><div class="tw-tweet-icon primary"><i class="fa-solid fa-arrow-up-from-bracket"></i></div
@@ -40,9 +39,6 @@ const helpers = {
     }
   }
 }
-
-
-
 
 
 $('#tweetInput').on('input', function () {
@@ -63,11 +59,15 @@ function getTweets() {
     type: 'GET',
     success: function (response) {
       for (let i = 0; i < 20; i++) {
-        $('#tweets').append(helpers.innerTWEET(response[i]));
+        response.tweets[i].liked = response.tweets[i].likes.includes(response.user);
+        $('#tweets').append(helpers.innerTWEET(response.tweets[i]));
+        updateLikeButton(response.tweets[i], response.tweets[i].liked);
+        updateLikeCounter(response.tweets[i]);
       }
     }
   });
 }
+
 function getUserTweets() {
   $.ajax({
     url: '/api/tweets/get/' + window.location.pathname.split('/')[2],
@@ -96,29 +96,40 @@ function postTweet() {
   });
 }
 
-function postLike(_id) {
-  //Obtiene el id del tweet
-
+function postLike(tweetId) {
   //Llamada ajax
   $.ajax({
-    url: '/api/tweets/like/' + _id,
+    url: '/api/tweets/like/' + tweetId,
     type: 'POST',
     success: function (response) {
-      updateLikeButton(response);
+      updateLikeButton(response.tweet, response.liked);
+      updateLikeCounter(response.tweet);
     }
   })
 }
 
-function updateLikeButton(response) {
-  console.log(`#${response.tweet._id}`);
+function updateLikeButton(tweet, liked) {
   //Switch the icon
-  if (response.liked) {
+  if (liked) {
     //Cambiar el icono de like a unlike
-    $(`#${response.tweet._id}`).html(`<i class="fa-solid fa-heart danger"></i>`);
+    $(`#${tweet._id}`).html(`<i class="fa-solid fa-heart danger"><span class="tw-counter"></span></i>`);
   } else {
     //Cambiar el icono de unlike a like
-    $(`#${response.tweet._id}`).html(`<i class="fa-regular fa-heart"></i>`);
+    $(`#${tweet._id}`).html(`<i class="fa-regular fa-heart"><span class="tw-counter"></span></i>`);
   }
+}
+
+function updateLikeCounter(tweet) {
+  $.ajax({
+    url: '/api/tweets/' + tweet._id,
+    type: 'GET',
+    success: function (response) {
+      const counter = response.likes.length;
+      if (counter > 0) {
+        $(`#${response._id}`).find('.tw-counter').text(response.likes.length);
+      }
+    }
+  });
 }
 
 $(document).ready(function () {
@@ -127,7 +138,31 @@ $(document).ready(function () {
     getTweets();
   } else if (window.location.pathname.includes('/user/')) {
     getUserTweets();
+    isFollowing();
   }
 });
 
+function isFollowing() {
+  $.ajax({
+    url: '/api/user/isFollowing/' + window.location.pathname.split('/')[2],
+    type: 'POST',
+    success: function (isFollowing) {
+      if (isFollowing) $('#followBtn').text('Unfollow');
+      else $('#followBtn').text('Follow');
+    }
+  });
+}
 
+$('#followBtn').click(function () {
+  $.ajax({
+    url: '/api/user/followHandler/' + window.location.pathname.split('/')[2],
+    type: 'POST',
+    success: function (isFollowing) {
+      if (isFollowing) {
+        $('#followBtn').text('Unfollow')
+      } else {
+        $('#followBtn').text('Follow')
+      }
+    }
+  });
+});

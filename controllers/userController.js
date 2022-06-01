@@ -10,12 +10,6 @@ async function index(req, res) {
   }
 }
 
-// Display the specified resource.
-async function show(req, res) { }
-
-// Show the form for creating a new resource
-async function create(req, res) { }
-
 // Store a newly created resource in storage.
 async function store(req, res) {
   const newUser = new User({
@@ -34,23 +28,67 @@ async function store(req, res) {
 }
 
 // Show the form for editing the specified resource.
-async function edit(req, res) { }
+async function editUserProfile(req, res) {
+  const { firstname, lastname, description, photo } = req.body;
+  try {
+    await User.findByIdAndUpdate(req.user._id, {
+      firstname,
+      lastname,
+      description,
+      photo,
+    });
+    res.redirect("/user/" + req.user._id);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/user/" + req.user._id);
+  }
+}
 
-// Update the specified resource in storage.
-async function update(req, res) { }
+async function isFollowing(req, res) {
+  const { id } = req.params;
+  try {
+    const loggedUser = await User.findById(req.user._id);
+    following = loggedUser.following.includes(id)
+    res.json(following);
+  } catch (error) {
+    res.json(error);
+  }
+}
 
-// Remove the specified resource from storage.
-async function destroy(req, res) { }
+async function followHandler(req, res) {
+  const { id } = req.params;
+  try {
+    const loggedUser = await User.findById(req.user._id);
+    const otherUser = await User.findById(id);
+    let isFollowing = loggedUser.following.includes(id)
+    if (isFollowing) {
+      // Unfollow
+      loggedUser.following.pull(id);
+      otherUser.followers.pull(req.user._id);
+      isFollowing = false;
+    } else {
+      // Follow
+      loggedUser.following.push(id);
+      otherUser.followers.push(req.user._id);
+      isFollowing = true;
+    }
+    await loggedUser.save();
+    await otherUser.save();
+    res.json({ isFollowing });
+  } catch (error) {
+    res.json(error);
+  }
+}
+
+
 
 // Otros handlers...
 // ...
 
 module.exports = {
   index,
-  show,
-  create,
   store,
-  edit,
-  update,
-  destroy,
+  editUserProfile,
+  isFollowing,
+  followHandler,
 };

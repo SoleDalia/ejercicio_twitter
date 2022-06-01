@@ -1,19 +1,23 @@
-const { tr } = require("date-fns/locale");
 const { User, Tweet } = require("../db/connection");
 
 //Trae todos los tweets en forma de JSON
 async function index(req, res) {
   try {
     const loggedUser = await User.findById(req.user._id);
-    const following = await loggedUser.following;
-    //Get the tweets from the logged user and the users that he follows
+    const following = loggedUser.following;
+
     const tweets = await Tweet.find({
       $or: [
         { author: loggedUser._id },
         { author: { $in: following } }
       ]
     }).sort({ creationdate: -1 }).populate('author');
-    res.json(tweets);
+
+    res.json({
+      tweets,
+      user: req.user._id
+    });
+
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -48,8 +52,12 @@ async function store(req, res) {
 // Trae el Tweet que solicitamos para editar en forma de JSON
 async function getTweetById(req, res) {
   const { id } = req.params;
-  const tweet = await Tweet.findById(id);
-  res.json(tweet);
+  try {
+    const tweet = await Tweet.findById(id);
+    res.json(tweet);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 }
 
 // Remove the specified resource from storage.

@@ -27,7 +27,7 @@
     <%- include('partials/sidebar.ejs', {user: user}) %>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left"></div>
+        <div class="col-xs-3 col-sm-3 text-center sidebar-left"></div>
         <div class="col-xs-6 col-sm-6">
           <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
@@ -49,7 +49,19 @@
           <div class="row d-flex">
             <div class="col-xs-1 col-sm-1">
               <div class="tw-tweet-input">
-                <img src="<%= user.photo  %> " alt="" />
+                <% if(user.photo) {%>
+                <a href="/user/<%= user._id %> ">
+                  <img src="<%= user.photo %>" alt="<%= user.name %>" class="tw-tweet-input-img" />
+                </a>
+                <% } else { %>
+                <a href="/user/<%= user._id %> ">
+                  <img
+                    src="https://i.stack.imgur.com/34AD2.jpg"
+                    alt="<%= user.name %>"
+                    class="tw-tweet-input-img"
+                  />
+                </a>
+                <% } %>
               </div>
             </div>
             <div class="col-xs-11 col-sm-11">
@@ -86,7 +98,7 @@
           <!-- Tweets Feed-->
           <div class="row" id="tweets"></div>
         </div>
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">
+        <div class="col-xs-3 col-sm-3 text-center sidebar-right">
           <div class="side-right">
             <div class="search-form">
               <form action="">

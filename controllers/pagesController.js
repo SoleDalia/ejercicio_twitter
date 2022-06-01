@@ -49,6 +49,7 @@ const showUserProfile = async (req, res) => {
     if (req.params.id === req.user.id) res.render("profile", { user: loggedUser });
     else res.render("otherProfile", { otherUser, user: loggedUser });
   } catch (err) {
+    res.redirect("/");
     console.log(err);
   }
 };

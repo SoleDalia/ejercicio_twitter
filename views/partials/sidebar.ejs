@@ -44,24 +44,34 @@
 
       <li class="menu-item">
         <a class="menu-link" href="#">
-          <img class="user-img-30" alt="" src="<%= user.photo %> " />
+          <% if(user.photo) {%>
+          <img src="<%= user.photo %>" alt="<%= user.name %>" class="user-img-30" />
+          <% } else { %>
+          <img
+            src="https://i.stack.imgur.com/34AD2.jpg"
+            alt="<%= user.name %>"
+            class="user-img-30"
+          />
+          <% } %>
         </a>
 
-        <div class="box">
-          <img src="https://via.placeholder.com/150" alt="" class="user-img-40" />
+        <div class="box" id="#profile-modal">
+          <% if(user.photo) {%>
+          <img src="<%= user.photo %>" alt="<%= user.name %>" class="user-img-40" />
+          <% } else { %>
+          <img
+            src="https://i.stack.imgur.com/34AD2.jpg"
+            alt="<%= user.name %>"
+            class="user-img-40"
+          />
+          <% } %>
           <p class="name"><%= user.firstname %> <%= user.lastname %></p>
           <p class="username">@<%= user.username %></p>
           <div class="bio"><%= user.description %></div>
-          <div class="folow"></div>
-        </div>
-      </li>
-      <li class="menu-item">
-        <a class="menu-link" href="#">
-          <i class="fas fa-ellipsis-h"></i>
-        </a>
-        <div class="box">
-          <a href=""></a>
-          <p class="logout">Logout</p>
+          <div class="follow"></div>
+          <div class="logout-btn">
+            <a href="/logout">Logout</a>
+          </div>
         </div>
       </li>
       <li class="menu-item">

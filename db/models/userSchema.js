@@ -15,6 +15,7 @@ const userSchema = new Schema({
   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
 
+//(Hook) Hashea la password
 userSchema.pre("save", async function (next) {
   const hashedPassword = await bcrypt.hash(this.password, 10);
   this.password = hashedPassword;

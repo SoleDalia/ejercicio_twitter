@@ -77,6 +77,7 @@ function getUserTweets() {
       //Show only 20 tweets at a time.
       for (let i = 0; i < 20; i++) {
         $('#tweets').append(helpers.innerTWEET(tweet[i]));
+        updateLikeCounter(tweet[i]);
       }
     }
   });
@@ -143,7 +144,7 @@ $(document).ready(function () {
 });
 
 function isFollowing() {
-  $.ajax({
+  $.ajax({                          //id del usuario que estamos viendo
     url: '/api/user/isFollowing/' + window.location.pathname.split('/')[2],
     type: 'POST',
     success: function (isFollowing) {
@@ -154,7 +155,7 @@ function isFollowing() {
 }
 
 $('#followBtn').click(function () {
-  $.ajax({
+  $.ajax({                            //id del usuario al que se le quiere seguir
     url: '/api/user/followHandler/' + window.location.pathname.split('/')[2],
     type: 'POST',
     success: function (isFollowing) {

@@ -177,8 +177,8 @@ a {
 .top-fixed {
   position: fixed;
   top: 0;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+  border-bottom: 1px solid #f1f4f7;
+  border-right: 1px solid #f1f4f7;
   padding: 20px 10px;
   height: 60px;
   width: 50%;
@@ -186,19 +186,20 @@ a {
 }
 /**************************/
 .side-right {
-  border-left: 1px solid #eee;
+  border-left: 1px solid #f1f4f7;
   position: absolute;
   margin-top: .1em;
   width: 19em;
 }
 .search-form {
-  background-color: #eee;
+  background-color: #f1f4f7;
   padding: .5em 1em;
   border-radius: 30px;
+  margin-top: 5px;
 }
 .search-form input {
   border: 0;
-  background-color: #eee;
+  background-color: #f1f4f7;
   color: #999;
   font-size: 14px;
 }
@@ -208,4 +209,56 @@ a {
 
 .search-form input:focus {
   outline: 0 none;
+}
+
+.trends {
+  background-color: #f1f4f7;
+  border-radius: 30px;
+  margin-top: 15px;
+}
+
+.trends h5{
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
+.trend-list {
+  margin-top: 10px;
+  padding: 0;
+}
+
+.trend-list li {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.trend-list li:hover {
+  background-color: #e7ebf0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.trend-list li p{
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.trend-list span {
+  color: rgb(105, 105, 105);
+  font-size: 13px;
+}
+.trend-list li small {
+  color: rgb(105, 105, 105);
+  font-size: 11px;
+  margin: 0;
+}
+
+.trend-list li.show-more {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

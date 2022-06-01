@@ -7,8 +7,24 @@ apiRouter.route('/tweets')
     .get(tweetController.index)
     .post(tweetController.store)
 
+apiRouter.route('/tweets/:id')
+    .get(tweetController.getTweetById)
+
+
+apiRouter.route('/tweets/get/:userId')
+    .get(tweetController.getTweetsByUser)
+
+apiRouter.route('/tweets/like/:id')
+    .post(tweetController.likesHandler)
+
 apiRouter.route('/users')
     .get(userController.index)
     .post(userController.store)
+
+apiRouter.route('/user/isFollowing/:id')
+    .post(userController.isFollowing)
+
+apiRouter.route('/user/followHandler/:id')
+    .post(userController.followHandler)
 
 module.exports = apiRouter; 

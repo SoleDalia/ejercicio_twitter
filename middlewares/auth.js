@@ -1,3 +1,4 @@
+//Si está autenticado
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
@@ -5,6 +6,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
+//Si no esta autenticado
 function isNotLoggedIn(req, res, next) {
     if (!req.isAuthenticated()) {
         return next();

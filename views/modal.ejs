@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- Modal -->
-  
+
     <button
       type="button"
       class="btn btn-signup"
@@ -25,71 +25,91 @@
     >
       Edit
     </button>
-    
+
     <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="close-btn-box">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="btn-modal-modal3">
-            <span class="text-perfil">Editar perfil</span>
-          
-            <button type="button" class="btn" type="submit">Save</button>
-          </div>
-            
-          
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="" method="post">
+            <div class="modal-header">
+              <div class="close-btn-box">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-edit-header">
+                <span class="text-perfil">Edit profile</span>
+                <button type="button" class="btn-btn-save" type="submit">Save</button>
+              </div>
+            </div>
+
+            <div class="container-fluid" style="height: 200px">
+              <img
+                src="https://via.placeholder.com/550x200?text=Visit+Blogging.com+Now%20C/O%20https://placeholder.com/"
+                alt="tweeter image"
+                class="img-modal-modal"
+              />
+            </div>
+
+            <div class="modal-body">
+              <div class="form-floating mb-3 boxes-modal">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Name"
+                  value="<%= user.firstname %>"
+                />
+                <label class="text-secondary" for="firstname">First name</label>
+              </div>
+              <div class="form-floating mb-3 boxes-modal">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Lastname"
+                  value="<%= user.lastname %>"
+                />
+                <label class="text-secondary" for="lastname">Last name</label>
+              </div>
+              <div class="form-floating mb-3 boxes-modal">
+                <textarea
+                  class="form-control my-2"
+                  id="description"
+                  rows="5"
+                  name="description"
+                  placeholder="Bio"
+                  value="<%= user.description %>"
+                ></textarea>
+                <label class="text-secondary" for="description">Bio</label>
+              </div>
+              <div class="form-floating mb-3 boxes-modal">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="photo"
+                  name="photo"
+                  placeholder="Image URL"
+                  value="<%= user.photo %>"
+                />
+                <label class="text-secondary" for="photo">Image URL</label>
+              </div>
+            </div>
+          </form>
         </div>
-    
-      <div class="container-fluid" style="height:400px ;">
-      <div class="row">
-        <div class="col-12">
-      
-       <img src="/img/tweeter.png" alt="tweeter image" class="bg-img" class="img-modal-modal"/>
       </div>
-      </div>
-      </div>
+    </div>
 
-      <div class="modal-body">
- 
-      <div>
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-      </div>
-      
-
-      <div class="form-floating mb-3 boxes-modal">
-        <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Name" />
-        <label class="text-secondary" for="floatingInput">Name</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input
-          type="email"
-          class="form-control rounded-3"
-          id="floatingInput"
-          placeholder="Phone,name@example.com,username"
-        />
-        <label for="floatingInput">Bio</label>
-      </div>
-
-      
-
-      
-  
-    
-   
-    
     <%- include("partials/scripts") %>
   </body>
 </html>

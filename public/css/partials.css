@@ -80,18 +80,41 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.menu .menu-item .box .folow {
+.menu .menu-item .box .follow {
   display: flex;
 }
-.menu .menu-item .box .folow a {
+.menu .menu-item .box .follow a {
   display: inline-block;
   margin-right: 10px;
   color: #999;
 }
-.menu .menu-item .box .folow a span {
+.menu .menu-item .box .follow a span {
   color: #000 !important;
   font-weight: 600;
 }
+
+.box .logout-btn
+{
+  display: flex;
+  flex-direction: column;
+  top: 10px;
+  right: 10px;
+  color: rgb(42, 42, 42);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.box .logout-btn:hover
+{
+  background-color: rgb(250, 250, 250);
+}
+
+.box .logout-btn a{
+  padding: 10px;
+}
+
+
 .menu .menu-item:hover .user-img-30 {
   border: 2px solid #1b95e0;
 }
@@ -154,8 +177,8 @@ a {
 .top-fixed {
   position: fixed;
   top: 0;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+  border-bottom: 1px solid #f1f4f7;
+  border-right: 1px solid #f1f4f7;
   padding: 20px 10px;
   height: 60px;
   width: 50%;
@@ -163,23 +186,79 @@ a {
 }
 /**************************/
 .side-right {
-  width: 30%;
-  border-left: 1px solid #eee;
-  padding: 10px 5px;
-  right: 0;
+  border-left: 1px solid #f1f4f7;
   position: absolute;
+  margin-top: .1em;
+  width: 19em;
 }
 .search-form {
-  background-color: #eee;
-  padding: 10px 20px;
+  background-color: #f1f4f7;
+  padding: .5em 1em;
   border-radius: 30px;
+  margin-top: 5px;
 }
 .search-form input {
   border: 0;
-  background-color: #eee;
+  background-color: #f1f4f7;
   color: #999;
   font-size: 14px;
 }
 .search-form i {
   color: #999;
+}
+
+.search-form input:focus {
+  outline: 0 none;
+}
+
+.trends {
+  background-color: #f1f4f7;
+  border-radius: 30px;
+  margin-top: 15px;
+}
+
+.trends h5{
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
+.trend-list {
+  margin-top: 10px;
+  padding: 0;
+}
+
+.trend-list li {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.trend-list li:hover {
+  background-color: #e7ebf0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.trend-list li p{
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.trend-list span {
+  color: rgb(105, 105, 105);
+  font-size: 13px;
+}
+.trend-list li small {
+  color: rgb(105, 105, 105);
+  font-size: 11px;
+  margin: 0;
+}
+
+.trend-list li.show-more {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

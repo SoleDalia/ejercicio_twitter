@@ -2,8 +2,8 @@ const express = require("express");
 const { newUser, showUser, findUser, createUser } = require("../controllers/pagesController");
 const passport = require("passport");
 const router = express.Router();
-const { isNotLoggedIn, isLoggedIn } = require("../middlewares/auth");
-const res = require("express/lib/response");
+const { isNotLoggedIn } = require("../middlewares/auth");
+const { Router } = require("express");
 
 // home
 router.get("/", isNotLoggedIn, (req, res) => {
@@ -31,12 +31,14 @@ router.post("/signin", isNotLoggedIn, (req, res) => {
 
 router.post("/signup", isNotLoggedIn, createUser);
 
-router.get("/modal", function (req, res) {
-  res.render("modal");
+router.get("/logout", (req, res) => {
+  req.logOut(function () {
+    res.redirect('/');
+  });
 });
 
-router.get("/logout", function (req, res) {
-  res.redirect("/");
-});
+router.get('/modal', (req, res) => {
+  res.render('modal');
+})
 
 module.exports = router;

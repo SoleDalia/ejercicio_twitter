@@ -1,14 +1,21 @@
 const helpers = {
   innerTWEET: (tweet) => {
     return `
-    <div class="tw-tweet">
-  <div class="tw-tweet-input">
-    <img src="${tweet.author.photo}" alt="" />
-    <div class="tw-user-info">
-      <a href="/user/${tweet.author._id}">${tweet.author.firstname} ${tweet.author.lastname}</a>
-      <span>@${tweet.author.username} 1h</span>
+      <div class="tw-tweet">
+    <div class="tw-tweet-input">
+      <img src="https://via.placeholder.com/150" alt="" />
+      <div class="tw-user-info">
+        <a href="">Felipe Fontana</a>
+        <span>@fontii 1h</span>
+      </div>
+    </div>
+    <div class="tw-tweet-text">
+      <p>
+        ${tweet.text}
+      </p>
     </div>
   </div>
+<<<<<<< HEAD
   <div class="tw-tweet-text">
     <p>${tweet.text}</p>
   </div>
@@ -29,6 +36,10 @@ const helpers = {
   </div>
 </div>
 `
+=======
+  
+      `
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
   },
   errorFeedback: (div, tweetBtn) => {
     //Make the border red
@@ -41,6 +52,12 @@ const helpers = {
 }
 
 
+<<<<<<< HEAD
+=======
+$(document).ready(function () {
+  getTweets();
+});
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
 $('#tweetInput').on('input', function () {
   const tweet = $('#tweetInput').val();
   if (tweet.length > 140) {
@@ -53,11 +70,15 @@ $('#tweetInput').on('input', function () {
   }
 });
 
+
+
+
 function getTweets() {
   $.ajax({
     url: '/api/tweets',
     type: 'GET',
     success: function (response) {
+<<<<<<< HEAD
       for (let i = 0; i < 20; i++) {
         response.tweets[i].liked = response.tweets[i].likes.includes(response.user);
         $('#tweets').append(helpers.innerTWEET(response.tweets[i]));
@@ -73,11 +94,12 @@ function getUserTweets() {
     url: '/api/tweets/get/' + window.location.pathname.split('/')[2],
     type: 'GET',
     success: function (tweet) {
+=======
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
       //Here we are going to loop through the response and append the data to the page.
-      //Show only 20 tweets at a time.
-      for (let i = 0; i < 20; i++) {
-        $('#tweets').append(helpers.innerTWEET(tweet[i]));
-      }
+      response.forEach(tweet => {
+        $('#tweets').append(helpers.innerTWEET(tweet));
+      });
     }
   });
 }
@@ -96,6 +118,7 @@ function postTweet() {
   });
 }
 
+<<<<<<< HEAD
 function postLike(tweetId) {
   //Llamada ajax
   $.ajax({
@@ -152,6 +175,8 @@ function isFollowing() {
     }
   });
 }
+=======
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
 
 $('#followBtn').click(function () {
   $.ajax({

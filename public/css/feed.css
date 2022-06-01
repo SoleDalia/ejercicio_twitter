@@ -53,14 +53,19 @@
     border-radius: 50%;
 }
 
-#tweetInput {
+.tw-tweet-input textarea {
     width: 100%;
     height: 3em;
     border: none;
     border-radius: 0.5em;
-    padding: 0.3em;
+    padding: 0.5em;
     font-size: 1.2rem;
     resize: none;
+}
+
+.tw-tweet-input textarea:hover {
+    border: none;
+    border-radius: 0em;
 }
 
 .tw-tweet-input .tw-user-info a {
@@ -94,7 +99,7 @@
     display: flex;
     justify-content:space-around;
     margin-top: 0.5rem;
-    margin-left: 3em;
+    margin-left: 3.5em;
 }
 
 .tw-icon-row i {
@@ -109,6 +114,7 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .tw-tweet-footer {
     display: flex;
     justify-content: space-between;
@@ -166,6 +172,8 @@
     color: #ff8080;
 }
 
+=======
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
 .sidebar-left {
     border-right: 1px solid #e7e7e7;
 }

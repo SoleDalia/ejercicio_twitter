@@ -10,7 +10,6 @@ module.exports = {
     for (let i = 0; i < 20; i++) {
       const userFirstName = faker.name.firstName();
       const userLastName = faker.name.lastName();
-      const userPhoto = faker.image.avatar();
       const newUser = await new User({
         firstname: userFirstName,
         lastname: userLastName,
@@ -18,7 +17,6 @@ module.exports = {
         email: `${userFirstName + userLastName}@gmail.com`,
         password: "123",
         description: faker.lorem.sentence(1),
-        photo: userPhoto,
       });
       newUser.save();
     }

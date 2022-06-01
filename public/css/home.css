@@ -32,10 +32,18 @@ html {
 
 .bg-img {
   width: 100%;
+<<<<<<< HEAD
   height: 100%;
 
   margin-left: -12px;
   margin-right: 12px;
+=======
+  height: 70%;
+  margin-bottom: 20px;
+
+  /* margin-left: 12px;
+  margin-right: 12px; */
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
 }
 
 /* buttons with icons */
@@ -575,7 +583,47 @@ footer .text-center {
   padding: 4px 15px;
 }
 
+<<<<<<< HEAD
 .btn-btn-save:hover {
   transition: 0.2s;
   opacity: 0.8;
+=======
+.btn-modal-modal3 {
+  transition: background-color 0.218s, border-color 0.218s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.boxes-modal {
+  display: flex;
+}
+/* logout */
+.btn-logout {
+  appearance: none;
+  border-radius: 20px;
+  border: 1px solid black;
+  color: white;
+  background: black;
+  cursor: pointer;
+  width: 300px;
+  max-width: 400px;
+  padding: 0 12px;
+  height: 40px;
+  transition: background-color 0.218s, border-color 0.218s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+>>>>>>> eb20a24fad7708100640890df15c19c2bc65ba55
 }

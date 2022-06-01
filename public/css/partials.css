@@ -186,15 +186,14 @@ a {
 }
 /**************************/
 .side-right {
-  width: 30%;
   border-left: 1px solid #eee;
-  padding: 10px 5px;
-  right: 0;
   position: absolute;
+  margin-top: .1em;
+  width: 19em;
 }
 .search-form {
   background-color: #eee;
-  padding: 10px 20px;
+  padding: .5em 1em;
   border-radius: 30px;
 }
 .search-form input {
@@ -205,4 +204,8 @@ a {
 }
 .search-form i {
   color: #999;
+}
+
+.search-form input:focus {
+  outline: 0 none;
 }

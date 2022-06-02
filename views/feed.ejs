@@ -26,10 +26,10 @@
   <body>
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div class="col-xs-3 col-sm-3 text-center sidebar-left">
+        <div class="col-lg-3 col-md-4 text-center sidebar-left">
           <%- include('partials/sidebar.ejs', {user: user}) %>
         </div>
-        <div class="col-xs-6 col-sm-6">
+        <div class="col-lg-6 col-md-8" id="tweetsParent">
           <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
             <a onclick="reloadTweets()" class="col-xs-3 col-sm-6 fw-bold tw-title">Inicio</a>
@@ -97,7 +97,7 @@
           <!-- Tweets Feed-->
           <div class="row" id="tweets"></div>
         </div>
-        <div class="col-xs-3 col-sm-3 text-center sidebar-right">
+        <div class="col-lg-3 col-md-3 text-center sidebar-right">
           <div class="search-form">
             <form action="">
               <label for=""><i class="fas fa-search"></i></label>

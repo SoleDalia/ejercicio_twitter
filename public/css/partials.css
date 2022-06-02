@@ -310,3 +310,33 @@ a {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+@media screen and (min-width: 1400px) {
+  .side-left {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .menu {
+    max-width: 75%;
+    margin: 0;
+    padding: 0;
+  }
+  .menu .menu-item {
+    max-width: 50%;
+  }
+  .menu .menu-item span {
+    display: none;
+  }
+
+  .tweet-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .side-left {
+    display: none;
+  }
+}

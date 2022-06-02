@@ -21,15 +21,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
     />
     <link rel="stylesheet" href="/css/feed.css" />
-    <link rel="stylesheet" href="/css/profile.css" />
     <link rel="stylesheet" href="/css/partials.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
   </head>
   <body>
-    <%- include('partials/sidebar.ejs', {user: user}) %>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-left"></div>
-        <div class="col-xs-6 col-sm-6">
+        <div class="col-lg-3 col-md-2 text-center sidebar-left"></div>
+        <div class="col-lg-6 col-md-8">
           <div class="profileHead">
             <a href="/" style="width: 50px; height: 50px; float: left">
               <svg
@@ -82,13 +81,66 @@
           </div>
           <div class="row" id="tweets"></div>
         </div>
-        <div class="col-xs-3 col-sm-3 text-center bg-light sidebar-right">
+        <div class="col-lg-3 col-md-2 text-center sidebar-right">
           <div class="side-right">
             <div class="search-form">
               <form action="">
                 <label for=""><i class="fas fa-search"></i></label>
                 <input type="text" name="" id="searchTweet" placeholder="Search Twitter" />
               </form>
+            </div>
+            <div class="trends">
+              <h5>Tendencias para ti</h5>
+              <ul class="trend-list">
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>nashe</p>
+                  <small>954 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>Uruguay</p>
+                  <small>240 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>JavaScript</p>
+                  <small>25 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>Jack Sparrow</p>
+                  <small>700 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>#Juicio</p>
+                  <small>12,2 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>Vida</p>
+                  <small>12 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>Node</p>
+                  <small>16,2 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>Nafta</p>
+                  <small>253 mil Tweets</small>
+                </li>
+                <li>
+                  <span>Tendencia en Uruguay</span>
+                  <p>#papel</p>
+                  <small>91,2 mil Tweets</small>
+                </li>
+                <li class="show-more">
+                  <a href="">Show more</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

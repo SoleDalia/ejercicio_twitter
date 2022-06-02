@@ -19,7 +19,6 @@ a {
   position: relative;
 }
 .side-left {
-  border-right: 1px solid #eee;
   position: fixed;
   height: 100%;
   width: 20%;
@@ -27,25 +26,42 @@ a {
   z-index: 1;
 }
 .menu .menu-item {
-  padding: 0px 20px;
+  padding: 5px 10px;
+  max-width: 70%;
   margin-bottom: 0px;
+  border-radius: 30px;
 }
+
 .menu .menu-item .menu-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.menu .menu-item .menu-link i.menu-logo {
   width: 55px;
   height: 55px;
-  display: block;
   text-align: center;
   border-radius: 50%;
-  margin-left: auto;
 }
-.menu .menu-item .menu-link:hover {
-  background-color: #cee9f9;
+
+.menu .menu-item .menu-link img.menu-logo{
+  width: 55px;
+  height: 55px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
 }
-.menu .menu-item .menu-link:hover i {
-  color: #1b95e0;
+
+.menu .menu-item .menu-link span {
+
+  font-size: 1.2em;
+  font-weight: thin;
+  color: rgb(0, 0, 0);
 }
-.menu .menu-item .menu-link:hover.box {
-  display: block !important;
+.menu .menu-item:hover {
+  background-color: #eee;
+  cursor: pointer;
 }
 .menu .menu-item .menu-link i {
   color: #000;
@@ -56,26 +72,58 @@ a {
   color: #1b95e0;
 }
 .menu .menu-item .box {
-  display: none;
-  padding: 20px;
   position: absolute;
-  box-shadow: 0px 0px 10px #ccc;
+  width: 340px;
+  height: 180px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   background-color: #fff;
-  margin-top: -240px;
-  margin-left: 116px;
-  width: 300px;
-  border-radius: 10px;
-  text-align: left;
-  z-index: 9;
+  padding: 20px;
+  z-index: 2;
+  top: 275px;
+  left: 35px;
+  border-radius: 15px;
+
+  display: none;
+  flex-direction: column;
+  justify-content: left;
+  align-items:flex-start;
+
 }
-.menu .menu-item .box .name {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 5px;
+
+.box .box-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
 }
-.menu .menu-item .box .username {
-  color: #999;
+
+.box .box-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
+
+.box .box-header .box-title {
+  margin-left: 10px;
+}
+
+.box .box-header .name {
+  font-size: .9rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.box .box-header .username {
+  font-size: .9rem;
+  font-weight: thin;
+  margin: 0;
+}
+
+
+
 .menu .menu-item .box .bio {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -95,31 +143,26 @@ a {
 
 .box .logout-btn
 {
-  display: flex;
-  flex-direction: column;
-  top: 10px;
-  right: 10px;
-  color: rgb(42, 42, 42);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: .95rem;
+  border-radius: 20px;
+
 }
 
 .box .logout-btn:hover
 {
   background-color: rgb(250, 250, 250);
+  cursor: pointer;
 }
 
 .box .logout-btn a{
-  padding: 10px;
+  color: #000;
 }
 
-
-.menu .menu-item:hover .user-img-30 {
-  border: 2px solid #1b95e0;
-}
 .menu .menu-item:hover .box {
-  display: block;
+  display: flex;
 }
 .user-img-30 {
   width: 30px;
@@ -128,21 +171,26 @@ a {
   margin-top: 12px;
   border: 2px solid #fff;
 }
-.user-img-40 {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-.add-twit {
-  background-color: #1b95e0;
+
+.tweet-btn {
   margin-top: 20px;
+  text-align: center;
+  padding: 15px 20px;
+  background-color: #1b95e0;
+  max-width: 70%;
+  border-radius: 30px;
 }
-.add-twit i {
-  color: #fff !important;
+
+.tweet-btn a {
+  color: #fff;
+  font-weight: bold;
 }
-.add-twit:hover {
-  background-color: #1677b2 !important;
+
+.tweet-btn:hover {
+  background-color: #1b8fd8;
+  cursor: pointer;
 }
+
 .side-main {
   border-right: 1px solid #eee;
   position: absolute;
@@ -261,4 +309,34 @@ a {
 .trend-list li.show-more {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+@media screen and (min-width: 1400px) {
+  .side-left {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .menu {
+    max-width: 75%;
+    margin: 0;
+    padding: 0;
+  }
+  .menu .menu-item {
+    max-width: 50%;
+  }
+  .menu .menu-item span {
+    display: none;
+  }
+
+  .tweet-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .side-left {
+    display: none;
+  }
 }

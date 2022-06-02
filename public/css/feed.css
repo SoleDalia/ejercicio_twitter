@@ -54,13 +54,14 @@
 }
 
 #tweetInput {
-    width: 100%;
+    width: 95%;
     height: 3em;
     border: none;
     border-radius: 0.5em;
     padding: 0.3em;
     font-size: 1.2rem;
     resize: none;
+    margin: 0.5em 0;
 }
 
 .tw-tweet-input .tw-user-info a {
@@ -85,6 +86,7 @@
     border: none;
     border-radius: 1.5em;
     padding: 0.5em 1em;
+    margin-bottom: 10px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
@@ -185,4 +187,39 @@
 
 textarea.non-resize {
     resize: none;
+}
+
+/* Media Queries */
+
+/* 1200px */
+@media screen and (max-width: 1200px) {
+    .btn-twitter {
+        font-size: 0.95rem;
+        padding: 7px 10px;
+    }
+    
+    #tweetInput {
+        height: 2.5em;
+        margin: 10px;
+    }
+}
+
+/* 992px */
+@media screen and (max-width: 992px) {
+    
+    .sidebar-right {
+        display: none;
+    }
+    #tweetInput {
+        margin: 0 25px;
+    }
+    .tw-icon-row {
+        margin-left: 0;
+        justify-content: start;
+    }
+    #tweetsParent {
+        border-right: 1px solid #e7e7e7;
+    }
+    #tweets {
+    }
 }

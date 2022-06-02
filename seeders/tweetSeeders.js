@@ -11,7 +11,7 @@ module.exports = {
       const random = Math.floor(Math.random() * users.length);
       const tweetAuthor = users[random];
       const newTweet = await new Tweet({
-        text: faker.lorem.sentence(3),
+        text: faker.lorem.sentence(10),
         author: tweetAuthor,
         creationdate: faker.date.recent(),
       });

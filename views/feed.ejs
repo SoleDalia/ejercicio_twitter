@@ -24,10 +24,11 @@
     <link rel="stylesheet" href="/css/partials.css" />
   </head>
   <body>
-    <%- include('partials/sidebar.ejs', {user: user}) %>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-3 col-sm-3 text-center sidebar-left"></div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xs-3 col-sm-3 text-center sidebar-left">
+          <%- include('partials/sidebar.ejs', {user: user}) %>
+        </div>
         <div class="col-xs-6 col-sm-6">
           <!-- Tweet Form -->
           <div class="row d-flex justify-content-between">
@@ -87,9 +88,7 @@
                   </div>
                 </div>
                 <div class="col-lg-2">
-                  <button onclick="postTweet()" id="tweetBtn" class="btn btn-twitter">
-                    Twittear
-                  </button>
+                  <button onclick="postTweet()" id="tweetBtn" class="btn btn-twitter">Tweet</button>
                 </div>
               </div>
             </div>

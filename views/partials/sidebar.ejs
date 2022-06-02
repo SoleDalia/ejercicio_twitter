@@ -3,82 +3,88 @@
     <ul class="menu">
       <li class="menu-item">
         <a class="menu-link active" href="/home">
-          <i class="fas fa-dove"></i>
+          <i class="fa-brands fa-twitter menu-logo"></i>
+          <span></span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link" href="/home">
-          <i class="fas fa-home"></i>
+          <i class="fa-solid fa-house menu-logo"></i>
+          <span>Home</span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link">
-          <i class="fas fa-hashtag"></i>
+          <i class="fas fa-hashtag menu-logo"></i>
+          <span>Explore</span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link">
-          <i class="fas fa-bell"></i>
+          <i class="fas fa-bell menu-logo"></i>
+          <span>Notifications</span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope menu-logo"></i>
+          <span>Messages</span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link">
-          <i class="fas fa-bookmark"></i>
+          <i class="fas fa-bookmark menu-logo"></i>
+          <span>Bookmarks</span>
         </a>
       </li>
       <li class="menu-item">
         <a class="menu-link">
-          <i class="fas fa-dove"></i>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a class="menu-link">
-          <i class="fas fa-sticky-note"></i>
+          <i class="fas fa-sticky-note menu-logo"></i>
+          <span>Lists</span>
         </a>
       </li>
 
       <li class="menu-item">
         <a class="menu-link" href="#">
           <% if(user.photo) {%>
-          <img src="<%= user.photo %>" alt="<%= user.name %>" class="user-img-30" />
+          <img src="<%= user.photo %>" id="sidebar-img" alt="<%= user.name %>" class="menu-logo" />
           <% } else { %>
           <img
             src="https://i.stack.imgur.com/34AD2.jpg"
             alt="<%= user.name %>"
-            class="user-img-30"
+            class="menu-logo"
+            id="sidebar-img"
           />
           <% } %>
+          <span>Profile</span>
         </a>
 
         <div class="box" id="#profile-modal">
-          <% if(user.photo) {%>
-          <img src="<%= user.photo %>" alt="<%= user.name %>" class="user-img-40" />
-          <% } else { %>
-          <img
-            src="https://i.stack.imgur.com/34AD2.jpg"
-            alt="<%= user.name %>"
-            class="user-img-40"
-          />
-          <% } %>
-          <p class="name"><%= user.firstname %> <%= user.lastname %></p>
-          <p class="username">@<%= user.username %></p>
-          <div class="bio"><%= user.description %></div>
+          <div class="box-header">
+            <% if(user.photo) {%>
+            <img src="<%= user.photo %>" alt="<%= user.name %>" class="user-img-40" />
+            <% } else { %>
+            <img
+              src="https://i.stack.imgur.com/34AD2.jpg"
+              alt="<%= user.name %>"
+              class="user-img-40"
+            />
+            <% } %>
+            <div class="box-title">
+              <p class="name"><%= user.firstname %> <%= user.lastname %></p>
+              <p class="username">@<%= user.username %></p>
+            </div>
+          </div>
           <div class="follow"></div>
           <div class="logout-btn">
-            <a href="/logout">Logout</a>
+            <a href="#">Add an existing account </a>
+          </div>
+          <div class="logout-btn">
+            <a href="/logout">Log out @<%= user.username %> </a>
           </div>
         </div>
       </li>
-      <li class="menu-item">
-        <a class="menu-link add-twit">
-          <i class="fas fa-feather-alt"></i>
-        </a>
-      </li>
+      <li class="tweet-btn"><a href="">Tweet</a></li>
     </ul>
   </div>
 </div>
